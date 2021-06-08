@@ -29,10 +29,11 @@ then
     echo "Got redis pass: $REDIS_PASSWORD"
     helm install \
         -n tyk \
+        -f values.yml \
         --set "redis.pass=$REDIS_PASSWORD" \
-        --set "redis.addrs={tyk-redis-master.tyk.svc.cluster.local:6379}"
+        --set "redis.addrs={tyk-redis-master.tyk.svc.cluster.local:6379}" \
         --set "secrets.APISecret=$TYK_API_KEY" \
-        --set "gateway.control.enabled=true"
+        --set "gateway.control.enabled=true" \
         tyk-ce \
         ./charts/tyk-helm-chart/tyk-headless
     echo "All is good. Go for it :)"

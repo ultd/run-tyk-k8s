@@ -4,11 +4,14 @@ A convenient shell script to run the Tyk API Gateway on Kubernetes with ease wit
 
 ## Prerequisites
 
+- Clone this repo
 - A Kubernetes cluster running with `kubectl` already configured to control it
 - Helm
 - Export a unique API key for Tyk to use as the admin API key - `export TYK_API_KEY=(ANY_SECURE_API_KEY)`
 
 To run `up` or `up-operator` commands you must first run `./launch.sh initialize` for launch to get all charts required. Then run `./launch.sh up-ns` to create the Kubernetes Tyk namespaces needed.
+
+Any custom values needed to be set for Tyk-CE chart can be set in `values.yml`
 
 ## Commands
 
